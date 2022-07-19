@@ -1,0 +1,29 @@
+<div class="add-todo-wrapper lesscontent has-blurred-white-bg">
+  <h2 class="is-bold">Adicionar Tarefa</h2>
+
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div class="form-field">
+      <input
+        class="textbox"
+        ngModel
+        #textField="ngModel"
+        name="text"
+        type="text"
+        placeholder="Insira o texto da tarefa..."
+        required
+        minlength="3"
+      />
+      <ng-container *ngIf="showValidationErrors && textField.invalid">
+        <p *ngIf="textField.errors?.required">
+          Por favor, complete todo o texto
+        </p>
+        <p *ngIf="textField.errors?.minlength">No mínimo, 3 caracteres</p>
+      </ng-container>
+    </div>
+
+    <div class="btns-container">
+      <a routerLink="../" class="btn">Cancelar</a>
+      <button class="btn align-end">Adicionar</button>
+    </div>
+  </form>
+</div>

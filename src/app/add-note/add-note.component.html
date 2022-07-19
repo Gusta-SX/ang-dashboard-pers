@@ -1,0 +1,36 @@
+<div class="add-note-wrapper lesscontent has-blurred-white-bg">
+  <h2 class="is-bold">Adicionar Nota</h2>
+
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div class="form-field">
+      <input
+        class="textbox"
+        ngModel
+        #titleField="ngModel"
+        name="title"
+        type="text"
+        placeholder="Insira o título do lembrete..."
+        required
+        minlength="3"
+      />
+      <ng-container *ngIf="showValidationErrors && titleField.invalid">
+        <p *ngIf="titleField.errors?.required">Por favor, complete o título</p>
+        <p *ngIf="titleField.errors?.minlength">No mínimo, 3 caracteres</p>
+      </ng-container>
+    </div>
+
+    <div class="form-field">
+      <textarea
+        class="textarea"
+        ngModel
+        name="content"
+        placeholder="Insira o conteúdo do lembrete..."
+      ></textarea>
+    </div>
+
+    <div class="btns-container">
+      <a routerLink="../" class="btn">Cancelar</a>
+      <button class="btn align-end">Adicionar</button>
+    </div>
+  </form>
+</div>

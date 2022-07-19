@@ -1,0 +1,31 @@
+<div class="edit-todo-wrapper container has-blurred-white-bg">
+  <h2 class="is-bold">Editar Tarefa</h2>
+
+  <p *ngIf="!todo">Tarefa não encontrada</p>
+
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)" *ngIf="todo">
+    <div class="form-field">
+      <input
+        class="textbox"
+        [ngModel]="todo.text"
+        #textField="ngModel"
+        name="text"
+        type="text"
+        placeholder="Enter todo text..."
+        required
+        minlength="3"
+      />
+      <ng-container *ngIf="textField.invalid">
+        <p *ngIf="textField.errors?.required">
+          Por favor, complete todo o texto
+        </p>
+        <p *ngIf="textField.errors?.minlength">No mínimo, 3 caracteres</p>
+      </ng-container>
+    </div>
+
+    <div class="btns-container">
+      <a routerLink="../" class="btn">Cancelar</a>
+      <button class="btn align-end">Salvar</button>
+    </div>
+  </form>
+</div>

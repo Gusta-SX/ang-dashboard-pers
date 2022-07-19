@@ -1,1 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons+Outlined|Material+Icons");
+
+* {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+body {
+  box-sizing: border-box;
+  color: #222;
+}
+.container {
+  max-width: 750px;
+  margin: auto;
+}
+.lesscontent {
+  max-width: 695px;
+  margin: auto;
+}
+.btn {
+  display: inline-flex;
+  color: white;
+  text-decoration: none;
+  align-items: flex-start;
+  padding: 7px 16px;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  i {
+    font-size: 18px;
+  }
+  &:hover {
+    background: rgba(#000000, 0.8);
+    backdrop-filter: blur(2px);
+  }
+  &:active {
+    background: rgba(#000000, 0.85);
+  }
+}
+.btns-container {
+  display: flex;
+  margin-top: 20px;
+  &.btns-centered {
+    justify-content: center;
+  }
+  .align-end {
+    margin-left: auto;
+  }
+}
+.has-blurred-white-bg {
+  background: rgba(white, 0.85);
+  backdrop-filter: blur(20px);
+}
+.is-bold {
+  font-weight: bold;
+}
+.form-field {
+  margin-bottom: 20px;
+  p {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    color: red;
+    margin-top: 4px;
+  }
+  label.form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(black, 0.8);
+    font-size: 14px;
+  }
+}
+
+h2.is-bold {
+  margin: 0px 0px 15px 0px;
+  font-size: 18px;
+}
+.textbox,
+.textarea {
+  font-size: 13px;
+  width: 96%;
+  padding: 1% 2%;
+  background: rgba(255, 255, 255, 0.437);
+  border: 1px solid rgba($color: #000000, $alpha: 0.3);
+  border-radius: 5px;
+  &:hover {
+    background: rgba(255, 255, 255, 0.579);
+  }
+  &:focus {
+    background: rgb(255, 255, 255);
+    outline: none;
+  }
+  &:hover,
+  &:focus {
+    border-color: rgba(black, 0.5);
+  }
+}
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}

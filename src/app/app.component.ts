@@ -111,9 +111,12 @@ const baseStyles = style({
 
     ]),
     trigger('bgAnim', [
-      transition(':leave', animate(1000, style({
+      transition(':leave', animate(500, style({
         opacity: 0
-      })))
+      }))),
+      transition(':enter', animate(500, style({
+        opacity: 1
+      }))),
     ]),
     trigger('fadeAnim', [
       transition(':enter', [
